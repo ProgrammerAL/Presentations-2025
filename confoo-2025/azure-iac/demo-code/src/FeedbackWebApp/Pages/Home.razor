@@ -1,0 +1,65 @@
+﻿@page "/"
+@using FeedbackWebApp.Configs
+@using QRCoder
+@using SixLabors.ImageSharp
+@inject NavigationManager NavManager
+@inject ApiConfig ApiConfig
+
+<PageTitle>Home</PageTitle>
+
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        column-gap: 120px;
+    }
+
+    .qr-image {
+        height: 600px;
+        width: 600px;
+    }
+</style>
+
+
+<div class="grid-container">
+    <div class="grid-item">
+        <h1>Leave some feedback!</h1>
+        <img class="qr-image" src="@FeedbackQrCodeImageUrl" />
+    </div>
+    <div class="grid-item">
+        <h1>Download the Content!</h1>
+        <img class="qr-image" src="@BlogPostQrCodeImageUrl" />
+    </div>
+</div>
+
+@code {
+    public string? FeedbackQrCodeImageUrl { get; set; }
+    public string? BlogPostQrCodeImageUrl { get; set; }
+
+    protected override void OnInitialized()
+    {
+        //Make sure only a single slash is at the end
+        //  Some browsers don't like that
+        var baseUri = NavManager.BaseUri;
+        if (baseUri.EndsWith('/'))
+        {
+            baseUri = baseUri.Substring(0, baseUri.Length - 1);
+        }
+
+        var qrGenerator = new QRCodeGenerator();
+        var commentsUrl = $"{baseUri}/comments";
+        FeedbackQrCodeImageUrl = GenerateQrCode(qrGenerator, commentsUrl);
+        BlogPostQrCodeImageUrl = GenerateQrCode(qrGenerator, ApiConfig.BlogPostUrl);
+
+        base.OnInitialized();
+    }
+
+    private string GenerateQrCode(QRCodeGenerator qrGenerator, string text)
+    {
+        var qrCodeData = qrGenerator.CreateQrCode(text, QRCodeGenerator.ECCLevel.Q);
+        var graphic = new Base64QRCode(qrCodeData);
+        var base64EncodedImage = graphic.GetGraphic(pixelsPerModule: 20, darkColor: Color.Black, lightColor: Color.Transparent, drawQuietZones: false, imgType: Base64QRCode.ImageType.Png);
+
+        return string.Format("data:image/png;base64,{0}", base64EncodedImage);
+    }
+}

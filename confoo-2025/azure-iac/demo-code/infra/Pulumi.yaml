@@ -1,0 +1,3 @@
+name: DenverDevDayMay2024-FeedbackSystem
+runtime: dotnet
+description: A minimal Azure Native C# Pulumi program

@@ -27,7 +27,7 @@ with AL Rodriguez
 
 # What this session is
 
-- Overview of Cloud Infrastructure as Code (IaC)
+- Overview of Cloud Infrastructure as Code (IaC) 
   - Specifically for Developers
 - Introduction to Pulumi
 - Demo with C# and Azure
@@ -53,10 +53,6 @@ with AL Rodriguez
 
 ---
 
-![bg contain](presentation-images/epic-handshake-meme.jpg)
-
----
-
 ![bg contain](presentation-images/padme-meme.jpg)
 
 ---
@@ -70,13 +66,6 @@ with AL Rodriguez
   - Create more environments with ease
   - Updated with a PR
   - YAML, JSON, Custom DSL, or Your Choice of Language
-
----
-
-# How is IaC run?
-
-- CI/CD pipeline
-- Manually from someone's machine
 
 ---
 

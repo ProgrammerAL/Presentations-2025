@@ -1,0 +1,13 @@
+config:
+  confoo-2025:azure-resource-group-name: dev-confoo-2025-feedback-rg
+  confoo-2025:functions-package-path: ../src/published-apps/functions.zip
+  confoo-2025:location: eastus2
+  confoo-2025:static-site-path: ../src/published-apps/webapp
+  confoo-2025:service-config: 
+    Version: local
+    Environment: dev
+  confoo-2025:resource-users-config:
+    GroupName: dev-users
+    Users:
+    - AL@programmeral.com
+pulumi:template: azure-csharp

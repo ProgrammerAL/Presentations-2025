@@ -35,7 +35,7 @@ with AL Rodriguez
 
 ---
 
-# How do you deploy infrastructure?
+# How do you deploy cloud infrastructure?
 
 - Other team handles it?
 - Automated/Manual/Mixed?
@@ -181,19 +181,6 @@ return await Deployment.RunAsync(() =>
 - Usable in:
   - Stack References
   - `Pulumi.README.md` files
-
----
-
-# Resource References
-
-- "Get" Functions
-- Loaded as Read Only variables
-
----
-
-#
-
-![bg contain](presentation-images/pulumi-state-flow.png)
 
 ---
 

@@ -26,7 +26,7 @@ public class ProductsRepository : IProductsRepository
     public async ValueTask CreateProductAsync(string id, string name, int cost, string currencyCountry)
     {
         using var span = _tracer.StartSpan("create-product-entity");
-        _ = span.SetAttribute("product-id", id);
+        _ = span.SetAttribute("my.product-id", id);
 
         _ = await _context.Products.AddAsync(new ProductEntity
         {
@@ -49,7 +49,7 @@ public class ProductsRepository : IProductsRepository
         await Task.Delay(3_000);
 
         var products = await _context.Products.ToListAsync();
-        span.SetAttribute("product-count", products.Count);
+        span.SetAttribute("my.product-count", products.Count);
 
         return products;
     }

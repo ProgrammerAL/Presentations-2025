@@ -1,12 +1,12 @@
 ---
 marp: true
-title: OpenTelemetry: More than just a different way to log
+title: Intro to OpenTelemetry for Developers
 paginate: true
 theme: gaia
 author: Al Rodriguez
 ---
 
-# OpenTelemetry: More than just a different way to log
+# Intro to OpenTelemetry for Developers
 
 with AL Rodriguez
 
@@ -26,7 +26,7 @@ with AL Rodriguez
 
 # What is Observability?
 
-"Observability is about getting the right information at the right time into the hands of the people who have the ability and responsibility to do the right thing. Helping them make better `technical and business decisions` driven by real data, not guesses, or hunches, or shots in the dark. Time is the most precious resource you have — your own time, your engineering team’s time, your company’s time." - Charity Majors (@mipsytipsy) CTO of Honeycomb
+"Observability is about getting the right information at the right time into the hands of the people who have the ability and responsibility to do the right thing. Helping them make better `technical and business decisions` driven by real data, not guesses, or hunches, or shots in the dark. Time is the most precious resource you have — your own time, your engineering team's time, your company's time." - Charity Majors (@mipsytipsy) CTO of Honeycomb
 
 ---
 
@@ -57,11 +57,10 @@ with AL Rodriguez
 
 # Limitations of Plain Text Logs
 
-- Data in files is hard to sift through
-  - And expensive
+- Data in files is hard, and expensive, to sift through
 - Hard to combine logs for a distributed application
-- Custom providers can make this way easier
-  - Take a big dependency on the vendor
+- 3rd Pary Vendors make this easier
+  - Big dependency on the vendor
   - Devs must to learn that vendor's tools
 - Example Scenario:
   - UI calls `Service A` which calls `Service B` which calls `Service C`

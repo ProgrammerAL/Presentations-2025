@@ -4,6 +4,7 @@ title: Azure IaC for Developers with C# and Pulumi
 paginate: true
 theme: gaia
 author: Al Rodriguez
+footer: 'ProgrammerAL and ProgrammerAL.com'
 ---
 
 # Azure IaC for Developers with C# and Pulumi
@@ -191,9 +192,9 @@ return await Deployment.RunAsync(() =>
 
 ---
 
-# Online Info
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Content &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback
 
-- @ProgrammerAL
-- programmerAL.com
+![bg 70%](presentation-images/presentation_link_qrcode.png)
 
-![bg right 80%](presentation-images/presentation_link_qrcode.png)
+![bg 70%](presentation-images/feedback-qr-code.png)
+

@@ -22,7 +22,7 @@ public class StoreCommentsEndpoint : ControllerBase
     [HttpPost(Name = "store")]
     public async Task<IActionResult> StoreComments([FromBody, Required] StoreCommentsRequest request)
     {
-        var entity = new CommentsRepository.StoreCommentsEntity(request.Comments);
+        var entity = new CommentsRepository.StoreCommentsEntity(request.Rating, request.Comments, request.ContactInfo);
         var result = await _commentsRepo.StoreCommentsAsync(entity);
 
         if (result.IsError)
@@ -36,7 +36,12 @@ public class StoreCommentsEndpoint : ControllerBase
 
     public class StoreCommentsRequest
     {
+        [Required, Range(minimum: 1, maximum: 5)]
+        required public int Rating { get; set; }
+
         [Required(AllowEmptyStrings = false)]
-        public required string Comments { get; set; }
+        required public string Comments { get; set; }
+
+        public string? ContactInfo { get; set; }
     }
 }

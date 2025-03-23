@@ -1,3 +1,5 @@
+#pragma warning disable IDE0058 // Expression value is never used
+
 using FeedbackService;
 using FeedbackService.Database;
 
@@ -39,4 +41,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+await app.RunAsync();
+#pragma warning restore IDE0058 // Expression value is never used

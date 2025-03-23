@@ -20,7 +20,7 @@ public interface ICommentsRepository
 
 public class CommentsRepository : ICommentsRepository
 {
-    public record StoreCommentsEntity(string Comments);
+    public record StoreCommentsEntity(int Rating, string Comments, string? ContactInfo);
 
     private readonly IOptions<StorageConfig> _storageConfig;
 
@@ -36,12 +36,14 @@ public class CommentsRepository : ICommentsRepository
         var tableUri = new Uri(_storageConfig.Value.Endpoint);
         var tableClient = new TableClient(tableUri, _storageConfig.Value.TableName, new DefaultAzureCredential());
 
-        await tableClient.CreateIfNotExistsAsync();
+        _ = await tableClient.CreateIfNotExistsAsync();
 
         // Make a dictionary entity by defining a <see cref="TableEntity">.
         var tableEntity = new TableEntity(itemKey, itemKey)
         {
+            { "Rating", entity.Rating },
             { "Comments", entity.Comments },
+            { "ContactInfo", entity.ContactInfo },
         };
 
         return await tableClient.AddEntityAsync(tableEntity);

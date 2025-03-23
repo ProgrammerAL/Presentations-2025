@@ -14,15 +14,11 @@ with AL Rodriguez
 
 ---
 
-![bg](presentation-images/sponsors.png)
-
----
-
 # Me (AL)
 
 - @ProgrammerAL
 - ProgrammerAL.com
-- Senior Azure Cloud Engineer at Microsoft
+- Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
 
@@ -30,11 +26,11 @@ with AL Rodriguez
 
 # Why are we here?
 
-- Discuss features of C#/.NET to enforce code quality
-  - Setup a Pit of Success
+- Discuss a C# Pit of Success
+  - Enforce code quality
 - Present ***Recommendations***
-- All Free
-- Please limit your yelling
+  - Please limit your yelling
+- All Free*
 
 ---
 
@@ -49,9 +45,10 @@ with AL Rodriguez
 
 ---
 
-# Why a Pit of Success?
+# What does a "Pit of Success" get us?
 
 - Guard Rails
+  - Uniformity
 - Shift-Left
 - More work now, less work later
 
@@ -82,19 +79,18 @@ with AL Rodriguez
 ```xml
 <PropertyGroup>
   <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  <NoWarn>$(NoWarn);NU5104</NoWarn>
 <PropertyGroup>
 ```
 
 ---
 
 # Recommendation:
-## Nullable References Types (NRTs)
+## Embrace Nullable References Types (NRTs)
 
 - Stop yelling at me!
   - They're good! I swear.
 - Not as hard as Rust!
-- A lof of code hassle can be mitigated
+- A lot of code hassle can be mitigated
 
 ---
 
@@ -121,7 +117,7 @@ public void SomeMethod()
   Console.WriteLine(userId);//Generates Compiler Warning
 }
 
-private string? LoadUserId(HttpContext context)
+private string? LoadUserId(HttpContext? context)
 {
   if(context is null)
   {

@@ -165,7 +165,7 @@ public void SomeMethod(MyWebRequest myReq)
 
 # Check for Null at "Ingress of the App"
 
-- Add to entities coming into your code
+- Check all entities coming into your code
   - HTTP Requests
   - External Service Calls
   - Database Calls*
@@ -189,13 +189,13 @@ public void SomeMethod(MyWebRequest myReq)
 
 ---
 
-# External Tools
+# External Tools You Can Install
 
 - SonarSource / SonarQube / SonarCloud
 - CodeMaid
 - FxCop
 - Rider / Resharper
-- .NET
+- Visual Studio
 
 ---
 
@@ -232,6 +232,13 @@ public void SomeMethod(MyWebRequest myReq)
   - `Roslynator.Analyzers`
   - `Microsoft.Azure.Functions.Worker.Sdk.Analyzers`
   - `SonarAnalyzer.CSharp`
+
+---
+
+# Recommendation: 
+## Manage all Static Rules in One Place
+
+- .editorconfig file
 
 ---
 
@@ -274,6 +281,12 @@ dotnet_diagnostic.SA1403.severity=error
 ```
 ---
 
+# It's okay to suppress rules in specific cases
+
+- `GlobalSuppressions.cs` file
+- Individual `SuppressMessage` attribute
+
+---
 # Recommendation: 
 ## Codify Code Patterns
 
@@ -293,7 +306,7 @@ dotnet_diagnostic.SA1403.severity=error
 
 # Source Generators
 
-- "Next level Roslyn"
+- Add new code at compile time
 - Already used by the .NET Team heavily for AoT stuff
 
 ---
@@ -348,6 +361,7 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 
 ```xml
 <PropertyGroup>
+  <NuGetAudit>true</NuGetAudit>
   <NuGetAuditMode>all</NuGetAuditMode>
   <NuGetAuditLevel>low</NuGetAuditLevel>
 </PropertyGroup>

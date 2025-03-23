@@ -17,7 +17,7 @@ with AL Rodriguez
 # Me (AL)
 
 - @ProgrammerAL
-- ProgrammerAL.com
+- https://ProgrammerAL.com
 - Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
@@ -410,6 +410,6 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 # Online Info
 
 - @ProgrammerAL
-- programmerAL.com
+- https://ProgrammerAL.com
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)

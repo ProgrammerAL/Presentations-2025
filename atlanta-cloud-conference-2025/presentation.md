@@ -26,10 +26,10 @@ with AL Rodriguez
 
 # What is this session?
 
-- Discuss Serverless
+- Introduction and Overview to Serverless
 - Overview of Serverless in Azure
   - Pros and Cons
-- Introduction and Overview to Serverless
+  - Specific Services
 
 ---
 
@@ -59,10 +59,22 @@ with AL Rodriguez
 
 ---
 
-# Let's Define Serverless
+# CNCF Definition of Serverless
 
-- Scales to 0
-- Pay for usage
+* Abstracts servers away from the user
+* Underlying software managed by service provider
+  - Physical machine, VM, physical security, software updates
+* Charged by usage
+* Provider specific SDK/API/etc
+- https://glossary.cncf.io/serverless
+
+---
+
+# Simpler Serverless Definition
+
+* Scales 
+  - Down 0, up to "infinity"
+* Pay for usage
 
 ---
 
@@ -91,11 +103,11 @@ with AL Rodriguez
 
 # Serverless Compute
 
-- Application Code
-- Generally Functions
+* Application Code
+  - Written for a custom platform
+* Generally Functions
   - REST endpoints
   - Event driven
-- Written for a custom platform
 
 ---
 
@@ -103,22 +115,31 @@ with AL Rodriguez
 
 - Azure Functions
 - Azure Container Apps
+- Azure Logic Apps
 
 ---
 
 # Azure Functions
 
-- Different Process Models
-  - In-Process vs Isolated
-- Supports different programming languages
-- Deployed from:
+* Triggers
+  - HTTP, Queue, Database, Event Grid, IoT, and more!
+* Supports different programming languages
+* Deployed from:
   - Single code file, zip file, container image
+* Pay per invocation*
+  - First 1 million free
 
 ---
 
 # Azure Container Apps
 
 - Abstraction over Kubernetes
+* Pay per invocation, plus CPU/Memory Usage
+  - First 180,000 seconds free
+
+---
+
+# Azure Logic Apps
 
 ---
 
@@ -142,10 +163,24 @@ with AL Rodriguez
 
 # Serverless Storage
 
-- Storage Accounts
+- Azure Storage Accounts
   - Blobs
   - Queue
   - Tables
+
+---
+
+# Blobs
+
+- REST API
+- Scales "forever"
+- Cost: storage usage and transactions
+
+---
+
+# Queue Storage
+
+- It's a queue!
 
 ---
 
@@ -167,15 +202,28 @@ with AL Rodriguez
 
 # CosmosDB
 
-- Document Database
-- Heavily pushed by Microsoft
+* Document Database
+* Heavily pushed by Microsoft
+* Has a Serverless mode
+  - Flag set when creating
 
 ---
 
 # Azure Managed SQL
 
-- Has a Serverless mode
-- 
+* Has a Serverless mode
+  - Flag set when creating
+
+---
+
+# Event Driven Services
+
+* Service Bus
+  - Instead of Storage Queue
+
+---
+
+# Event Driven Architecture
 
 ---
 

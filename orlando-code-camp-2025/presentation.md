@@ -48,15 +48,14 @@ with AL Rodriguez
 # What does a "Pit of Success" get us?
 
 - Guard Rails
-  - Uniformity
+- Uniformity
 - Shift-Left
-- More work now, less work later
+  - More work now, less work later
 
 ---
 
-# This session is:
+# This session is a set of Recommendations:
 
-- Recommendations
 - Some build on each other
 - Your call to use or not
 - Don't yell at me
@@ -214,8 +213,8 @@ public void SomeMethod(MyWebRequest myReq)
 ```xml
 <PropertyGroup>
   <EnableNETAnalyzers>true</EnableNETAnalyzers>
-  <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
   <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
 </PropertyGroup>

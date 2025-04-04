@@ -26,7 +26,7 @@ with AL Rodriguez
 
 # What is this session?
 
-- Introduction and Overview to Serverless
+- <u>Introduction</u> and Overview to Serverless
 - Overview of Serverless in Azure
   - Pros and Cons
   - Specific Services
@@ -35,7 +35,7 @@ with AL Rodriguez
 
 # In the beginning...
 
-* We had servers
+* We had physical servers
 * Then Virtual Machines
 * Then Virtual Machines in co-located spaces
 * Then the cloud was created
@@ -43,8 +43,18 @@ with AL Rodriguez
 
 ---
 
+# After the cloud...
+
+- More abstractions were added
+- IaaS/PaaS/SaaS
+- Serverless was born
+
+---
+
 # What is Serverless?
 
+- Started with Compute
+  - Grew to other types of services
 - Care about the Servers, less
 - High level abstraction over the platform
   - Devs ignore: OS/CPU/Memory/Disk Space/etc
@@ -54,42 +64,42 @@ with AL Rodriguez
 # "Serverless" got out of hand
 
 - Became a Buzzword
-  - Serverless meant everything
-- Popular with Microservices
+- Serverless meant everything
+- Serverless meant nothing
 
 ---
 
 # CNCF Definition of Serverless
 
-* Abstracts servers away from the user
-* Underlying software managed by service provider
+- Abstracts servers away from the user
+- Underlying software managed by service provider
   - Physical machine, VM, physical security, software updates
-* Charged by usage
-* Provider specific SDK/API/etc
+- Charged by usage
+- Provider specific SDK/API/etc
 - https://glossary.cncf.io/serverless
 
 ---
 
 # Simpler Serverless Definition
 
-* Scales 
+- Scales 
   - Down 0, up to "infinity"
-* Pay for usage
+- Pay for usage
 
 ---
 
 # Pros of Serverless
 
-* Only pay for what you use
-* Simplified/Targeted development model
+- Only pay for what you use
+- Simplified/Targeted development model
 
 ---
 
 # Cons of Serverless
 
-* Cold Boot
-* Tightly coupled to the platform
-* Can be more expensive than an always running service
+- Cold Boot
+- Tightly coupled to the platform
+- Can be more expensive than an always running service
 
 ---
 
@@ -224,6 +234,8 @@ with AL Rodriguez
 ---
 
 # Event Driven Architecture
+
+- Thrives off serverless
 
 ---
 

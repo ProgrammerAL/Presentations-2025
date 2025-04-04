@@ -14,6 +14,10 @@ with AL Rodriguez
 
 ---
 
+![bg 80%](presentation-images/sponsors.png)
+
+---
+
 # Me (AL)
 
 - @ProgrammerAL

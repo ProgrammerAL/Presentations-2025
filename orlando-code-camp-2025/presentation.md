@@ -128,40 +128,6 @@ private string? LoadUserId(HttpContext? context)
 ```
 ---
 
-# Demo: DataAnnotations POCO Keyword Example
-
-```csharp
-public class MyWebRequest
-{
-  [Required(AllowEmptyStrings = false)]
-  public string? Name { get; set; }
-}
-
-public void SomeMethod(MyWebRequest myReq)
-{
-  Console.WriteLine(myReq!.Name);
-}
-```
-
----
-
-# Demo: Required DataAnnotations POCO Keyword Example
-
-```csharp
-public class MyWebRequest
-{
-  [Required(AllowEmptyStrings = false)]
-  public required string Name { get; set; }
-}
-
-public void SomeMethod(MyWebRequest myReq)
-{
-  Console.WriteLine(myReq.Name);
-}
-```
-
----
-
 # Check for Null at "Ingress of the App"
 
 - Check all entities coming into your code

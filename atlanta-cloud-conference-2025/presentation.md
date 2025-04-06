@@ -27,9 +27,12 @@ with AL Rodriguez
 # What is this session?
 
 - <u>Introduction</u> and Overview to Serverless
+  - Conversation
+  - No Code
 - Overview of Serverless in Azure
   - Pros and Cons
   - Specific Services
+- Software Development Perspective*
 
 ---
 
@@ -71,12 +74,12 @@ with AL Rodriguez
 
 # CNCF Definition of Serverless
 
-- Abstracts servers away from the user
-- Underlying software managed by service provider
+* Abstracts servers away from the user
+* Underlying software managed by service provider
   - Physical machine, VM, physical security, software updates
-- Charged by usage
-- Provider specific SDK/API/etc
-- https://glossary.cncf.io/serverless
+* Charged by usage
+* Provider specific SDK/API/etc
+* https://glossary.cncf.io/serverless
 
 ---
 
@@ -85,6 +88,7 @@ with AL Rodriguez
 - Scales 
   - Down 0, up to "infinity"
 - Pay for usage
+- Proprietary to the platform
 
 ---
 
@@ -115,7 +119,7 @@ with AL Rodriguez
 
 * Application Code
   - Written for a custom platform
-* Generally Functions
+* Run by a Trigger
   - REST endpoints
   - Event driven
 
@@ -141,9 +145,15 @@ with AL Rodriguez
 
 ---
 
+![bg 90%](presentation-images/azure-functions-code.png)
+
+---
+
 # Azure Container Apps
 
-- Abstraction over Kubernetes
+* Abstraction over Kubernetes
+* Mainly HTTP Triggers
+  - Has some other triggers
 * Pay per invocation, plus CPU/Memory Usage
   - First 180,000 seconds free
 
@@ -151,14 +161,22 @@ with AL Rodriguez
 
 # Azure Logic Apps
 
+* No-Code Platform, build Workflows
+  - UI Based
+* Big Feature: Connectors
+* Consumption Tier, pay per invocation 
+
+---
+
+![bg 60%](presentation-images/logic-apps-code.png)
+
 ---
 
 # Non-Serverless Compute
 
-- Kubernetes (AKS) and Container Instances (ACI)
-  - Someone is managing Pods
-  - Pods are servers!
-- Azure App Service
+* Kubernetes (AKS) and Container Instances (ACI)
+  - You manage Pods and Kubernetes Version
+* Azure App Service
   - PaaS, pay for hours it's on
   - Abstraction over a VM
 
@@ -176,7 +194,7 @@ with AL Rodriguez
 - Azure Storage Accounts
   - Blobs
   - Queue
-  - Tables
+- Azure Service bus
 
 ---
 
@@ -191,56 +209,78 @@ with AL Rodriguez
 # Queue Storage
 
 - It's a queue!
+  - 1 reader
+- Scales "forever"
+- Cost: storage usage and transactions
 
 ---
 
-# Serverless Database
+# Service Bus
 
-- Azure Table Storage
-- CosmosDB
+- Also a Queue!
+  - Many readers
+- Per for transaction
+
+---
+
+# Serverless Databases
+
 - Azure Managed SQL
+- CosmosDB
+- Azure Table Storage
+
+---
+
+# Azure SQL Database
+
+- MS SQL Server
+  - Not proprietary*
+- Has a Serverless mode
+  - scales to 0
+- Pay per usage while on, and storage usage
+
+---
+
+# CosmosDB
+
+- Document Database
+- Heavily pushed by Microsoft
+- Has a Serverless mode
+  - Flag set when creating
+- Pay per query difficulty, and storage usage
 
 ---
 
 # Azure Table Storage
 
 - Document database
-- Part of Azure Storage
+  - Part of Azure Storage
 - Fun Fact: HaveIBeenPwned.com used this has DB until very recently
-
----
-
-# CosmosDB
-
-* Document Database
-* Heavily pushed by Microsoft
-* Has a Serverless mode
-  - Flag set when creating
-
----
-
-# Azure Managed SQL
-
-* Has a Serverless mode
-  - Flag set when creating
-
----
-
-# Event Driven Services
-
-* Service Bus
-  - Instead of Storage Queue
+- Pay per transaction and storage usage
 
 ---
 
 # Event Driven Architecture
 
 - Thrives off serverless
+- Triggered by services
+
+![bg right 80%](presentation-images/event-driven.svg)
 
 ---
 
 # Review
 
+* Serverless Definition
+  - Scales
+  - Pay for usage
+  - Proprietary
+* Compute
+  - Functions, Container Apps, Logic Apps
+* Storage
+  - Blobs, Queues, Service Bus
+* Database
+  - Managed SQL Server, Cosmos DB, Table Storage
 
 ---
 

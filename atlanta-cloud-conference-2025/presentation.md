@@ -76,7 +76,7 @@ with AL Rodriguez
 
 * Abstracts servers away from the user
 * Underlying software managed by service provider
-  - Physical machine, VM, physical security, software updates
+  - Physical machine, VM, physical security, software updates, SDK/Runtime updates
 * Charged by usage
 * Provider specific SDK/API/etc
 * https://glossary.cncf.io/serverless
@@ -104,6 +104,15 @@ with AL Rodriguez
 - Cold Boot
 - Tightly coupled to the platform
 - Can be more expensive than an always running service
+
+---
+
+# Event Driven Architecture
+
+- Thrives off serverless
+- Triggered by services
+
+![bg right 80%](presentation-images/event-driven.svg)
 
 ---
 
@@ -135,13 +144,15 @@ with AL Rodriguez
 
 # Azure Functions
 
-* Triggers
-  - HTTP, Queue, Database, Event Grid, IoT, and more!
-* Supports different programming languages
-* Deployed from:
-  - Single code file, zip file, container image
-* Pay per invocation*
-  - First 1 million free
+- Scales
+  - Scales based on usage
+- Pay for usage
+  - Pay per invocation*
+    - First 1 million free
+- Proprietary to the platform
+  - Triggers - HTTP, Queue, Database, Event Grid, IoT, and more!
+  - Supports different programming languages, based on MS
+  - Deployed from - Single code file, zip file, container image
 
 ---
 
@@ -151,20 +162,30 @@ with AL Rodriguez
 
 # Azure Container Apps
 
-* Abstraction over Kubernetes
-* Mainly HTTP Triggers
-  - Has some other triggers
-* Pay per invocation, plus CPU/Memory Usage
-  - First 180,000 seconds free
+- Scales
+  - Usage rules to scale
+- Pay for usage
+  - Pay per invocation, plus CPU/Memory Usage
+    - First 180,000 seconds free
+- Proprietary to the platform
+  - Abstraction over Kubernetes
+  - Mainly HTTP Triggers
+    - Has some other triggers
+
 
 ---
 
 # Azure Logic Apps
 
-* No-Code Platform, build Workflows
-  - UI Based
-* Big Feature: Connectors
-* Consumption Tier, pay per invocation 
+- Scales
+  - Scales based on usage
+- Pay for usage
+  - Consumption Tier, pay per invocation 
+- Proprietary to the platform
+  - No-Code Platform, build Workflows
+    - UI Based
+  - Big Feature: Connectors
+
 
 ---
 
@@ -200,26 +221,37 @@ with AL Rodriguez
 
 # Blobs
 
-- REST API
-- Scales "forever"
-- Cost: storage usage and transactions
+- Scales
+  - Scales "forever"
+- Pay for usage
+  - Cost: storage usage and transactions
+- Proprietary to the platform
+  - REST API
+
 
 ---
 
 # Queue Storage
 
-- It's a queue!
-  - 1 reader
-- Scales "forever"
-- Cost: storage usage and transactions
+- Scales
+  - Scales "forever"
+- Pay for usage
+  - Cost: storage usage and transactions
+- Proprietary to the platform
+  - REST API
+  - It's a queue - 1 reader
 
 ---
 
 # Service Bus
 
-- Also a Queue!
-  - Many readers
-- Per for transaction
+- Scales
+  - Pay too scale
+- Pay for usage
+  - Per for transaction
+- Proprietary to the platform
+  - Also a Queue - Many readers
+
 
 ---
 
@@ -231,41 +263,40 @@ with AL Rodriguez
 
 ---
 
-# Azure SQL Database
+# Azure Managed SQL Database
 
-- MS SQL Server
-  - Not proprietary*
-- Has a Serverless mode
-  - scales to 0
-- Pay per usage while on, and storage usage
+- Scales
+  - Has a Serverless mode - Scales to 0
+- Pay for usage
+  - Pay per usage while on, and storage usage
+- Proprietary to the platform
+  - MS SQL Server - Not proprietary*
 
 ---
 
 # CosmosDB
 
-- Document Database
-- Heavily pushed by Microsoft
-- Has a Serverless mode
-  - Flag set when creating
-- Pay per query difficulty, and storage usage
+- Scales
+  - Scales for cost
+- Pay for usage
+  - Has a Serverless mode - Flag set when creating
+  - Pay per query difficulty, and storage usage
+- Proprietary to the platform
+  - Custom Azure Document Database
+  - Heavily pushed by Microsoft
 
 ---
 
 # Azure Table Storage
 
-- Document database
-  - Part of Azure Storage
-- Fun Fact: HaveIBeenPwned.com used this has DB until very recently
-- Pay per transaction and storage usage
-
----
-
-# Event Driven Architecture
-
-- Thrives off serverless
-- Triggered by services
-
-![bg right 80%](presentation-images/event-driven.svg)
+- Scales
+  - Scales "forever" like blobs
+- Pay for usage
+  - Pay per transaction and storage usage
+- Proprietary to the platform
+  - Document database
+    - Part of Azure Storage
+* Fun Fact: HaveIBeenPwned.com used this has DB until very recently
 
 ---
 

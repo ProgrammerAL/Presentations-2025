@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<IsAspireHost>true</IsAspireHost>
+		<UserSecretsId>4d3c9f35-be9b-4277-940a-c46622532c83</UserSecretsId>
+		<LangVersion>latest</LangVersion>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\OTelDemo.PublicApiService\OTelDemo.PublicApiService.csproj" />
+		<ProjectReference Include="..\OTelDemo.InternalApiService\OTelDemo.InternalApiService.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Aspire.Hosting.AppHost" Version="9.2.0" />
+		<PackageReference Include="Aspire.Hosting.Azure.Sql" Version="9.2.0" />
+	</ItemGroup>
+	<PropertyGroup>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+	<PropertyGroup>
+		<NuGetAudit>true</NuGetAudit>
+		<NuGetAuditMode>all</NuGetAuditMode>
+		<NuGetAuditLevel>low</NuGetAuditLevel>
+	</PropertyGroup>
+</Project>

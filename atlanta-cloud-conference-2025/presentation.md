@@ -49,7 +49,7 @@ with AL Rodriguez
 # After the cloud...
 
 - More abstractions were added
-- IaaS/PaaS/SaaS
+- IaaS/PaaS
 - Serverless was born
 
 ---
@@ -203,7 +203,7 @@ with AL Rodriguez
 
 ---
 
-# Outside of Azure
+# Other Types of Serverless Compute
 
 - Javascript functions (Cloudflare, Vercel, everywhere else)
 - WebAssembly (Cloudflare, Fermyon)
@@ -246,9 +246,9 @@ with AL Rodriguez
 # Service Bus
 
 - Scales
-  - Pay too scale
+  - Pay to scale
 - Pay for usage
-  - Per for transaction
+  - Consumption Tier, Pay per transaction
 - Proprietary to the platform
   - Also a Queue - Many readers
 

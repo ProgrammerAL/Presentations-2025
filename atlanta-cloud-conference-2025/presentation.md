@@ -4,6 +4,7 @@ title: The State of Serverless: Azure 2025 Edition
 paginate: true
 theme: default
 author: Al Rodriguez
+footer: '@ProgrammerAL and ProgrammerAL.com'
 ---
 
 # The State of Serverless: Azure 2025 Edition

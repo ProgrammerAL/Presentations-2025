@@ -2,9 +2,9 @@
 marp: true
 title: Intro to OpenTelemetry for Developers
 paginate: true
-theme: gaia
+theme: default
 author: Al Rodriguez
-footer: 'ProgrammerAL and ProgrammerAL.com'
+footer: '@ProgrammerAL and https://ProgrammerAL.com'
 ---
 
 # Intro to OpenTelemetry for Developers
@@ -18,7 +18,7 @@ with AL Rodriguez
 # Me (AL)
 
 - @ProgrammerAL
-- ProgrammerAL.com
+- https://ProgrammerAL.com
 - Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
@@ -33,9 +33,9 @@ with AL Rodriguez
 
 # Why Observability?
 
-- Developers need runtime data to diagnose bugs
-- I.T. Operations needs to know metrics like Requests Per Second, CPU and Memory usage
-- P.M.s want to know usage statistics
+* Developers need runtime data to diagnose bugs
+* I.T. Operations needs to know metrics like Requests Per Second, CPU and Memory usage
+* P.M.s want to know usage statistics
   - Ex: How often a shopping cart is abandoned?
 
 ---
@@ -47,9 +47,9 @@ with AL Rodriguez
 ---
 
 # 2025+
-- More programming languages exist
-- Plain text log messages to console/files/3rd party company solution
-- Logs have higher verbosity, more data per line
+* More programming languages exist
+* Plain text log messages to console/files/3rd party company solution
+* Logs have higher verbosity, more data per line
   - Timestamp, log level, JSON output, Thread Id, Request Id, etc
 
 ![](presentation-images/log-message.png)
@@ -58,12 +58,12 @@ with AL Rodriguez
 
 # Limitations of Plain Text Logs
 
-- Data in files is hard, and expensive, to sift through
-- Hard to combine logs for a distributed application
-- 3rd Pary Vendors make this easier
+* Data in files is hard, and expensive, to sift through
+* Hard to combine logs for a distributed application
+* 3rd Pary Vendors make this easier
   - Big dependency on the vendor
   - Devs must to learn that vendor's tools
-- Example Scenario:
+* Example Scenario:
   - UI calls `Service A` which calls `Service B` which calls `Service C`
 	- An exception occurs in `Service B` because of response from `Service C`
 
@@ -71,10 +71,10 @@ with AL Rodriguez
 
 # Azure Application Insights SDK
 
-- Upload Logs
-- Upload Metrics
+* Upload Logs
+* Upload Metrics
   - Usage patterns, trends, requests per second, etc
-- Track Transactions
+* Track Transactions
   - HTTP Requests
   - Custom Events (wrap methods, external dependency calls, etc)
 
@@ -97,15 +97,15 @@ with AL Rodriguez
 
 # OTel is NOT Logging
 
-- Structured data
+- It's Structured data
 
 ---
 
 # What kind of does OTel care about?
 
-- Traces
+* Traces
   - Full lifetime of requests in the system
-- Metrics
+* Metrics
   - Numbers
     - Performance counters/requests per second/etc
 
@@ -130,6 +130,7 @@ with AL Rodriguez
 
 ![](presentation-images/trace.png)
 
+
 ---
 
 # Trace Spans
@@ -140,14 +141,20 @@ with AL Rodriguez
 
 ---
 
+# OTel Traceparent Header
+
+![](presentation-images/traceparent-propogation.png)
+
+---
+
 # Trace Example
 
-- Trace is created when a request comes into the system
-- OTel SDK creates a span when making HTTP call out to 3rd party service
+* Trace is created when a request comes into the system
+* OTel SDK creates a span when making HTTP call out to 3rd party service
 	- OTel SDK adds span atributes like Endpoint, Status Code, etc
-- OTel SDK creates a span when calling a database
+* OTel SDK creates a span when calling a database
 	- Custom code adds span attributes for the database call like query, runtime, cost
-- Custom Code creates custom Span to track important work
+* Custom Code creates custom Span to track important work
   - Adds spans to track user id for a delete operation
 
 ---
@@ -161,7 +168,7 @@ with AL Rodriguez
 
 ---
 
-# Demo Time
+# Code Demo Time
 
 ---
 
@@ -174,8 +181,8 @@ with AL Rodriguez
 
 # OTel Collector Agent
 
-- Separate process to push 
-- Reccomendation: Push OTel to locally run Collector Agent
+- Separate process to push OTel data to provider
+- Reccomendation: Push OTel to Collector Agent
   - Agent can batch, do retries, etc
 
 ![bg right 90%](presentation-images/otel-agent-sdk.png)
@@ -184,7 +191,7 @@ with AL Rodriguez
 
 # OTel for UI
 
-- Currently Experimental
+- Exists!
 - Requires more thinking when to start a new Trace
   - For specific operations?
   - When page loads?

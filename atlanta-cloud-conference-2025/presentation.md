@@ -106,21 +106,6 @@ with AL Rodriguez
 
 ---
 
-# Pros of Serverless
-
-- Only pay for what you use
-- Simplified/Targeted development model
-
----
-
-# Cons of Serverless
-
-- Cold Boot
-- Tightly coupled to the platform
-- Can be more expensive than an always running service
-
----
-
 # Event Driven Architecture
 
 - Thrives off serverless

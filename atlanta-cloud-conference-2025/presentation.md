@@ -14,6 +14,9 @@ with AL Rodriguez
 
 ---
 
+![bg 80%](presentation-images/sponsors-slide.png)
+
+---
 # Me (AL)
 
 - @ProgrammerAL
@@ -89,6 +92,16 @@ with AL Rodriguez
   - Down 0, up to "infinity"
 - Pay for usage
 - Proprietary to the platform
+
+---
+
+# Tradeoffs of Serverless
+
+| Pros      | Cons      |
+| ------------- | ------------- |
+| Only on when in use | Cold Boot |
+| Pay for what you use | Can be more expensive than always-on services |
+| Simplified Development Model | Tightly coupled to platform |
 
 ---
 

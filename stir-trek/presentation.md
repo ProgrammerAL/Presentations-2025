@@ -25,12 +25,6 @@ with AL Rodriguez
 
 ---
 
-# What is Observability?
-
-"Observability is about getting the right information at the right time into the hands of the people who have the ability and responsibility to do the right thing. Helping them make better `technical and business decisions` driven by real data, not guesses, or hunches, or shots in the dark. Time is the most precious resource you have — your own time, your engineering team's time, your company's time." - Charity Majors (@mipsytipsy) CTO of Honeycomb
-
----
-
 # Why Observability?
 
 * Developers need runtime data to diagnose bugs
@@ -77,12 +71,6 @@ with AL Rodriguez
 * Track Transactions
   - HTTP Requests
   - Custom Events (wrap methods, external dependency calls, etc)
-
----
-
-# OpenTelemetry (OTel)
-
-"OpenTelemetry is a collection of APIs, SDKs, and tools. Use it to instrument, generate, collect, and export telemetry data (metrics, logs, and traces) to help you analyze your software’s performance and behavior." - https://OpenTelemetry.io
 
 ---
 

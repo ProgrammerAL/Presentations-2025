@@ -172,13 +172,6 @@ with AL Rodriguez
 
 ---
 
-# OTel Logs
-
-- For Backwards Compatibility
-- Each message added as a Span
-
----
-
 # OTel Collector Agent
 
 - Separate process to push OTel data to provider
@@ -198,5 +191,10 @@ with AL Rodriguez
 
 ---
 
-![bg 90%](presentation-images/presentation_link_qrcode.png)
+# Closing Info
+
+- @ProgrammerAL
+- https://ProgrammerAL.com
+
+![bg right 80%](presentation-images/presentation_link_qrcode.png)
 

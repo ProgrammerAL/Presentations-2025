@@ -4,7 +4,7 @@ title: Intro to OpenTelemetry for Developers
 paginate: true
 theme: default
 author: Al Rodriguez
-footer: '@ProgrammerAL and https://ProgrammerAL.com'
+footer: '@ProgrammerAL and programmerAL.com'
 ---
 
 # Intro to OpenTelemetry for Developers

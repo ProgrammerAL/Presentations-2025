@@ -15,13 +15,21 @@ with AL Rodriguez
 
 ---
 
-# Me (AL)
+# About Me (AL)
 
 - @ProgrammerAL
 - https://ProgrammerAL.com
 - Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
+
+---
+
+# What are we talking about?
+
+- What is Observability
+- What is OpenTelemetry
+- How do we add OpenTelemetry to our code
 
 ---
 
@@ -179,10 +187,11 @@ with AL Rodriguez
 
 ---
 
-# Closing Info
+# In Conclusion
 
-- @ProgrammerAL
-- https://ProgrammerAL.com
+- Everyone cares about observability
+- OTel - Greatest Common Denominator
+- Traces have Spans have Attributes
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
 

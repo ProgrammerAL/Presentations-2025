@@ -479,3 +479,4 @@ dotnet_diagnostic.S4041.severity=error
 dotnet_diagnostic.S3925.severity=error
 
 dotnet_diagnostic.S2325.severity = suggestion
+

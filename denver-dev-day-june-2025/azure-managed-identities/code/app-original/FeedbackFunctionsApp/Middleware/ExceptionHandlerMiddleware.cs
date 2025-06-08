@@ -18,8 +18,8 @@ public class ExceptionHandlerMiddleware : IFunctionsWorkerMiddleware
         catch (Exception ex)
         {
             var req = await context.GetHttpRequestDataAsync();
-            var response = req!.CreateResponse();
-            await response.WriteAsJsonAsync(ex.ToString(), HttpStatusCode.InternalServerError);
+            var response = req!.CreateResponse(HttpStatusCode.InternalServerError);
+            await response.WriteAsJsonAsync(ex.ToString());
 
             SetHttpResponseData(context, response);
         }

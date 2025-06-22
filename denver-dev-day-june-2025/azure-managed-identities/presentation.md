@@ -2,8 +2,9 @@
 marp: true
 title: Managed Identities: Connect Without Connection Strings
 paginate: true
-theme: gaia
+theme: default
 author: Al Rodriguez
+footer: '@ProgrammerAL and programmerAL.com'
 ---
 
 # Azure Managed Identities: Connect Without Connection Strings
@@ -14,15 +15,11 @@ with AL Rodriguez
 
 ---
 
-![bg](presentation-images/sponsors.png)
-
----
-
 # Me (AL)
 
 - @ProgrammerAL
 - ProgrammerAL.com
-- Senior Azure Cloud Engineer at Microsoft
+- Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
 
@@ -39,17 +36,19 @@ with AL Rodriguez
 # Security has Layers
 
 - Today's topic: 1 of those layers
-- Secrets Management
+  - Secrets Management
+
+![bg right 100%](presentation-images/security-layers.svg)
 
 ---
 
 # What are Secrets?
 
-- Tokens/Passwords/Connection Strings
-- Plain text
-- Easy to use
+* Tokens/Passwords/Connection Strings
+  - Plain text
+* Easy to use
   - Anyone can use them
-- You have to manage:
+* You have to manage:
   - Where they're stored
   - Access to them
   - Rotate them
@@ -58,11 +57,11 @@ with AL Rodriguez
 
 # Secrets Leak
 
-- HaveIBeenPwned.com
 - Committed to Source Control
   - https://www.csoonline.com/article/571363/how-corporate-data-and-secrets-leak-from-github-repositories.html
 - Python Personal Access Token leaked to a Docker Image
   - https://www.techradar.com/pro/security/github-token-leak-could-have-put-the-entire-python-language-at-risk
+- HaveIBeenPwned.com
 - Disclaimer: Can't always avoid using secrets
 
 ---

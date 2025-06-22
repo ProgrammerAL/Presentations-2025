@@ -9,7 +9,7 @@
 
     "ServiceConfig__Environment": "alrodri-local",
     "ServiceConfig__Version": "local",
-    "StorageConfig__TableEndpoint": "DefaultEndpointsProtocol=https;AccountName=persistentstgd49dd876;AccountKey=taEE2xLrUS53LdJKOgZajBsNm5Sy02V2AeIag/f8IMMQC9aOU8zSRlNqoz3W1B5fisGBr86z+VfM+AStp4oV8w==;EndpointSuffix=core.windows.net",
+    "StorageConfig__TableEndpoint": "DefaultEndpointsProtocol=https;AccountName=persistentstge7be7dfc;AccountKey=+sLGtvLNkBiXVStk3wwgC64A8nYWttz7pRe+ZzPKqu/A2cmda0LshOk09xoxThoiO6dQVQyvt2qe+AStXyJEsg==;EndpointSuffix=core.windows.net",
     "StorageConfig__TableName": "Comments"
   }
 }

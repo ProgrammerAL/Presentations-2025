@@ -4,6 +4,7 @@ title: Setting Up Your C# Pit of Success
 paginate: true
 theme: default
 author: Al Rodriguez
+footer: '@ProgrammerAL and programmerAL.com'
 ---
 
 # Setting Up Your C# Pit of Success
@@ -11,10 +12,6 @@ author: Al Rodriguez
 with AL Rodriguez
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
-
----
-
-![bg 80%](presentation-images/sponsors.png)
 
 ---
 

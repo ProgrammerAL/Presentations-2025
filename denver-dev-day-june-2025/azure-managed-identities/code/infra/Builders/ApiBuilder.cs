@@ -85,11 +85,14 @@ public record ApiBuilder(
         var appServicePlan = new AppServicePlan("functions-app-service-plan", new AppServicePlanArgs
         {
             ResourceGroupName = ResourceGroup.Name,
-            Kind = "Linux",
+            Kind = "functionapp",
             Sku = new SkuDescriptionArgs
             {
-                Tier = "Dynamic",
-                Name = "Y1"
+                Tier = "FlexConsumption",
+                Name = "FC1",
+                Capacity = 0,
+                Family = "FC",
+                Size = "FC1"
             },
             // For Linux, you need to change the plan to have Reserved = true property.
             Reserved = true,
@@ -99,23 +102,28 @@ public record ApiBuilder(
         
         var functionAppSiteConfig = new SiteConfigArgs
         {
-            LinuxFxVersion = "DOTNET-ISOLATED|8.0",
+            NetFrameworkVersion = "v4.0",
             Cors = new CorsSettingsArgs
             {
                 AllowedOrigins = new[] { "*" }
             },
             AppSettings = new[]
             {
-                new NameValuePairArgs
-                {
-                    Name = "FUNCTIONS_WORKER_RUNTIME",
-                    Value = "dotnet-isolated",
-                },
-                new NameValuePairArgs
-                {
-                    Name = "FUNCTIONS_EXTENSION_VERSION",
-                    Value = "~4",
-                },
+                //new NameValuePairArgs
+                //{
+                //    Name = "FUNCTIONS_WORKER_RUNTIME",
+                //    Value = "dotnet-isolated",
+                //},
+                //new NameValuePairArgs
+                //{
+                //    Name = "FUNCTIONS_EXTENSION_VERSION",
+                //    Value = "~4",
+                //},
+                //new NameValuePairArgs
+                //{
+                //    Name = "WEBSITE_USE_PLACEHOLDER_DOTNETISOLATED",
+                //    Value = "1",
+                //},
                 new NameValuePairArgs
                 {
                     Name = "AzureWebJobsStorage",
@@ -123,13 +131,8 @@ public record ApiBuilder(
                 },
                 new NameValuePairArgs
                 {
-                    Name = "WEBSITE_RUN_FROM_PACKAGE",
-                    Value = storageInfra.FuncsBlob.Url,
-                },
-                new NameValuePairArgs
-                {
-                    Name = "SCM_DO_BUILD_DURING_DEPLOYMENT",
-                    Value = "0"
+                    Name = "DEPLOYMENT_STORAGE_CONNECTION_STRING",
+                    Value = storageAccountConnectionString,
                 },
                 new NameValuePairArgs
                 {
@@ -151,6 +154,44 @@ public record ApiBuilder(
                     Name = "StorageConfig__TableName",
                     Value = "Comments",
                 }
+            },
+            //Required to be able to deploy locally from VS
+            FtpsState = FtpsState.FtpsOnly,
+            ScmType = ScmType.None,
+        };
+
+        var funcsContainerUrl = Output.All(storageInfra.StorageAccount.Name, storageInfra.FuncsContainer.Name)
+            .Apply(x =>
+            {
+                var storageAccountName = x[0];
+                var containerName = x[1];
+                return $"https://{storageAccountName}.blob.core.windows.net/{containerName}";
+            });
+
+        var functionAppConfig = new FunctionAppConfigArgs
+        {
+            Deployment = new FunctionsDeploymentArgs
+            { 
+                Storage = new FunctionsDeploymentStorageArgs
+                { 
+                    Type = Pulumi.AzureNative.Web.FunctionsDeploymentStorageType.BlobContainer,
+                    Value = funcsContainerUrl,
+                    Authentication = new FunctionsDeploymentAuthenticationArgs
+                    { 
+                        Type = Pulumi.AzureNative.Web.AuthenticationType.StorageAccountConnectionString,
+                        StorageAccountConnectionStringName = "DEPLOYMENT_STORAGE_CONNECTION_STRING"
+                    }
+                }
+            },
+            Runtime = new FunctionsRuntimeArgs
+            { 
+                Name = "dotnet-isolated",
+                Version = "9.0"
+            },
+            ScaleAndConcurrency = new FunctionsScaleAndConcurrencyArgs
+            { 
+                MaximumInstanceCount = 100,
+                InstanceMemoryMB = 2048
             }
         };
 
@@ -163,6 +204,7 @@ public record ApiBuilder(
             HttpsOnly = true,
             SiteConfig = functionAppSiteConfig,
             ClientAffinityEnabled = false,
+            FunctionAppConfig = functionAppConfig
         });
 
         var httpsEndpoint = webApp.DefaultHostName.Apply(x => $"https://{x}");

@@ -11,10 +11,7 @@ namespace PulumiInfra.Config;
 
 public record GlobalConfig(
     ServiceConfig ServiceConfig,
-    ApiConfig ApiConfig,
-    StaticSiteConfig StaticSiteConfig,
-    PersistenceConfig PersistenceConfig
-    )
+    ApiConfig ApiConfig)
 {
     public static async Task<GlobalConfig> LoadAsync(Pulumi.Config config)
     {
@@ -28,22 +25,9 @@ public record GlobalConfig(
             FunctionsPackagePath = config.Require("functions-package-path")
         };
 
-        var staticSiteConfig = new StaticSiteConfigDto
-        {
-            StaticSitePath = config.Require("static-site-path")
-        };
-
-        var persistenceConfig = new PersistenceConfigDto
-        {
-            SqlAdminPassword = config.Require("sql-admin-password")
-        };
-
         return new GlobalConfig(
             ServiceConfig: config.RequireObject<ServiceConfigDto>("service-config").GenerateValidConfigObject(),
-            ApiConfig: apiConfig.GenerateValidConfigObject(),
-            StaticSiteConfig: staticSiteConfig.GenerateValidConfigObject(),
-            PersistenceConfig: persistenceConfig.GenerateValidConfigObject()
-            );
+            ApiConfig: apiConfig.GenerateValidConfigObject());
     }
 }
 

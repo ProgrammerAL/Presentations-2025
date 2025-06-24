@@ -52,6 +52,7 @@ with AL Rodriguez
   - Where they're stored
   - Access to them
   - Rotate them
+  - Updating them
 
 ---
 

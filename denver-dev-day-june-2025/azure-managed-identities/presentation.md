@@ -150,6 +150,7 @@ with AL Rodriguez
 
 - Similar to `DefaultAzureCredential`
 - Only add the ones you use
+  - `new ChainedTokenCredential(new ManagedIdentityCredential(), new AzureCliCredential());`
 
 ---
 

@@ -198,7 +198,11 @@
 <h1 id="chainedtokencredential">ChainedTokenCredential</h1>
 <ul>
 <li>Similar to <code>DefaultAzureCredential</code></li>
-<li>Only add the ones you use</li>
+<li>Only add the ones you use
+<ul>
+<li><code>new ChainedTokenCredential(new ManagedIdentityCredential(), new AzureCliCredential());</code></li>
+</ul>
+</li>
 </ul>
 <footer>@ProgrammerAL and programmerAL.com</footer>
 </section>

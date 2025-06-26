@@ -100,15 +100,17 @@ with AL Rodriguez
 - Abstraction over a Service Principal
 - Only works for Azure Managed Services
   - You don't see Client Secret
+- Used by your app to authenticate to Azure Services
+  - Exactly like a Service Principal
 
 ---
 
 # "Managed" means...
 
 - Microsoft does the hard work
-- Specific to Azure
-- Managed Identitied authenticate to "Managed" PaaS Services like:
-  - Managed SQL Server
+  - Specific to Azure
+- Managed Identitied authenticate to "Managed" Services like:
+  - Azure SQL Managed Instance
   - Storage Accounts
   - Service Bus
   - Key Vault

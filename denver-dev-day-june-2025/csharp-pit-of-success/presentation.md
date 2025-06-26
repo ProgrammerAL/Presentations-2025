@@ -377,6 +377,14 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 
 ---
 
+# In Depth Videos
+
+- YouTube Series of these concepts, more in-depth
+  - https://programmeral.com/posts/20250603_OpinionatedAspNetVideos
+  - https://www.youtube.com/playlist?list=PLywNgcEGt3ofUBJsuriVX9A-93JPDi48A
+
+---
+
 # Online Info
 
 - @ProgrammerAL

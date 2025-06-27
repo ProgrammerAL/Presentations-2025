@@ -15,6 +15,16 @@ with AL Rodriguez
 
 ---
 
+# Why are we here?
+
+- Discuss a C# Pit of Success
+  - Enforce code quality
+- Present ***Recommendations***
+  - Please limit your yelling
+- All Free*
+
+---
+
 ![bg 80%](presentation-images/sponsors.svg)
 
 ---
@@ -26,16 +36,6 @@ with AL Rodriguez
 - Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
-
----
-
-# Why are we here?
-
-- Discuss a C# Pit of Success
-  - Enforce code quality
-- Present ***Recommendations***
-  - Please limit your yelling
-- All Free*
 
 ---
 

@@ -15,6 +15,14 @@ with AL Rodriguez
 
 ---
 
+# Today's Goal
+
+- Learn what Azure Managed Identities are
+- Convert app using Connection Strings to use Managed Identities
+- Azure-specific session
+
+---
+
 ![bg 80%](presentation-images/sponsors.svg)
 
 ---
@@ -26,14 +34,6 @@ with AL Rodriguez
 - Principal Backend Developer at Olympus
 
 ![bg right 80%](presentation-images/presentation_link_qrcode.png)
-
----
-
-# Today's Goal
-
-- Learn what Azure Managed Identities are
-- Convert app using Connection Strings to use Managed Identities
-- Azure-specific session
 
 ---
 

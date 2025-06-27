@@ -29,8 +29,9 @@ public class AzTablePersister : IAzTablePersister
     {
         var itemKey = Guid.NewGuid().ToString();
 
-        var connectionString = _storageConfig.Value.TableEndpoint;
-        var tableClient = new TableClient(connectionString, tableName: "Comments");
+        var uri = new Uri(_storageConfig.Value.TableEndpoint);
+        var token = new DefaultAzureCredential();
+        var tableClient = new TableClient(uri, tableName: "Comments", token);
 
         await tableClient.CreateIfNotExistsAsync();
 

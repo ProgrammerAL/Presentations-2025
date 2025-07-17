@@ -33,17 +33,6 @@ with AL Rodriguez
 
 ---
 
-# Pit of Success
-
-"The Pit of Success: in stark contrast to a summit, a peak, or a journey across a desert to find victory through many trials and surprises, we want our customers to simply fall into winning practices by using our platform and frameworks. To the extent that we make it easy to get into trouble we fail."
-           
--Rico Mariani, MS Research MindSwap Oct 2003.
-
-
-- https://blog.codinghorror.com/falling-into-the-pit-of-success/
-
----
-
 # What does a "Pit of Success" get us?
 
 - Guard Rails

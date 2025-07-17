@@ -9,6 +9,8 @@ using Azure.Identity;
 
 using Microsoft.Extensions.Options;
 
+using ProgrammerAl.SourceGenerators.PublicInterfaceGenerator.Attributes;
+
 namespace FeedbackFunctionsApp.Persistence;
 
 public interface IAzTablePersister

@@ -11,17 +11,17 @@ namespace FeedbackFunctionsApp;
 public class ServiceConfig
 {
     [Required, NotNull]
-    public string? Environment { get; set; }
+    public required string? Environment { get; set; }
 
     [Required, NotNull]
-    public string? Version { get; set; }
+    public required string? Version { get; set; }
 }
 
 public class StorageConfig
 {
     [Required, NotNull]
-    public string? TableEndpoint { get; set; }
+    public required string? TableEndpoint { get; set; }
 
     [Required, NotNull]
-    public string? TableName { get; set; }
+    public required string? TableName { get; set; }
 }

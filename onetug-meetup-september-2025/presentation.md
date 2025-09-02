@@ -37,12 +37,84 @@ with AL Rodriguez
 - Wrap `if()` checks around code to ensure not null
 
 ---
+```csharp
+private void Combine(string a, string b, string c)
+{
+  var aShort = a.Substring(0, 2);
+  var bShort = b.Substring(0, 2);
+  var cShort = c.Substring(0, 2);
 
+  return $"{aShort} {bShort} -- {cShort}";
+}
+```
+---
+```csharp
+private void Combine(string a, string b, string c)
+{
+  if(a != null && b != null && c != null)
+  {
+    var aShort = a.Substring(0, 2);
+    var bShort = b.Substring(0, 2);
+    var cShort = c.Substring(0, 2);
+
+    return $"{aShort} {bShort} -- {cShort}";
+  }
+
+  return "";
+}
+```
+---
+```csharp
+public void FormatStrings(string a, string b, string c)
+{
+  if(a != null && b != null && c != null)
+  {
+    return Combine(a, b, c);
+  }
+
+  return "";
+}
+
+private void Combine(string a, string b, string c)
+{
+  var aShort = a.Substring(0, 2);
+  var bShort = b.Substring(0, 2);
+  var cShort = c.Substring(0, 2);
+
+  return $"{aShort} {bShort} -- {cShort}";
+}
+```
+---
+```csharp
+public void FormatStrings(string a, string b, string c)
+{
+  if(a != null && b != null && c != null)
+  {
+    return Combine(a, b, c);
+  }
+
+  return "";
+}
+
+public void DefaultCombine(string a, string b)
+{
+    return Combine(a, b, "Combined");
+}
+
+private void Combine(string a, string b, string c)
+{
+  var aShort = a.Substring(0, 2);
+  var bShort = b.Substring(0, 2);
+  var cShort = c.Substring(0, 2);
+
+  return $"{aShort} {bShort} -- {cShort}";
+}
+```
+---
 # Nullable Reference Types (NRTs)
 
 - Introduced in .NET 5 (2019!)
-- Compiler Warning when compiler thinks something __*can be*__ null
-- Early on, More thinking for developer (Shift Left)
+- **Warning**: Early on, More thinking for developer (Shift Left)
 
 ---
 
@@ -60,11 +132,72 @@ with AL Rodriguez
 
 ---
 
+# More on NRTs
+
+- NO CHANGE IN FUNCTIONALITY
+- Added syntax for developers
+
+---
+
 # Using NRTs
 
 - Adds syntax for null mapping (`!` and `?`)
 - Adds attributes for compiler hints
 
+---
+
+# Using `?` with NRTS
+
+- `?` means a variable May Be Null
+- Excluding `?` means it is assumed to be Not Null
+
+* `string? a = null;`
+* `string? b = "abc";`
+* `string c = "abc";`
+* `string d = null;//Compiler Warning`
+
+---
+
+# Using `!` with NRTs
+
+- `!` tells compiler to ignore a definite/possible null
+- Should be a last resort
+
+* `string a = null;//Compiler Warning`
+* `string b = null!;`
+
+---
+
+```csharp
+public void FormatStrings(string? a, string? b, string? c)
+{
+  if(a != null && b != null && c != null)
+  {
+    return Combine(a, b, c);
+  }
+
+  return "";
+}
+
+public void DefaultCombine(string? a, string? b)
+{
+    return Combine(a, b, "Combined");
+}
+
+public void LyingDefaultCombine(string? a, string? b)
+{
+    return Combine(a!, b!, "Combined");
+}
+
+private void Combine(string a, string b, string c)
+{
+  var aShort = a.Substring(0, 2);
+  var bShort = b.Substring(0, 2);
+  var cShort = c.Substring(0, 2);
+
+  return $"{aShort} {bShort} -- {cShort}";
+}
+```
 ---
 
 # Demo Code

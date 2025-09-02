@@ -204,6 +204,51 @@ private void Combine(string a, string b, string c)
 
 ---
 
+# Attributes
+
+- 11 Attributes (by last count)
+- Helpers to tell the compiler what to do in situations
+- Full List: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis
+
+---
+
+# More on Attributes
+
+- Helpful when the code isn't clear
+
+---
+
+# \[NotNullWhen\]
+
+```
+public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
+{
+  ...
+}
+```
+
+---
+
+# Event more \[NotNullWhen\]
+
+```
+if(TryParseNumber("abc-123"), out int? myNumber)
+{
+  Console.WriteLine(myNumber);
+}
+
+public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
+{
+  ...
+}
+```
+
+---
+
+# Demo Code
+
+---
+
 # Check for Null at "Ingress of the App"
 
 - Check all entities coming into your code

@@ -181,11 +181,13 @@ public void FormatStrings(string? a, string? b, string? c)
 
 public void DefaultCombine(string? a, string? b)
 {
+    //Compiler Warnings
     return Combine(a, b, "Combined");
 }
 
 public void LyingDefaultCombine(string? a, string? b)
 {
+    //No Warnings
     return Combine(a!, b!, "Combined");
 }
 
@@ -200,28 +202,25 @@ private void Combine(string a, string b, string c)
 ```
 ---
 
-# Demo Code
-
----
-
 # Attributes
 
 - 11 Attributes (by last count)
 - Helpers to tell the compiler what to do in situations
+  - Helpful when the code isn't clear
 - Full List: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis
 
 ---
 
-# More on Attributes
-
-- Helpful when the code isn't clear
-
----
-
-# \[NotNullWhen\]
+# Try Pattern
 
 ```
-public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
+if(TryParseNumber("abc-123"), out int? myNumber)
+{
+  //Compiler Warning
+  Console.WriteLine(myNumber);
+}
+
+public bool TryParseNumber(string text, out int? number)
 {
   ...
 }
@@ -229,7 +228,18 @@ public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
 
 ---
 
-# Event more \[NotNullWhen\]
+# \[NotNullWhen\]
+
+```
+public bool TryParseNumber(string text, [NotNullWhen(true)] out int? number)
+{
+  ...
+}
+```
+
+---
+
+# Even more \[NotNullWhen\]
 
 ```
 if(TryParseNumber("abc-123"), out int? myNumber)
@@ -245,7 +255,40 @@ public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
 
 ---
 
-# Demo Code
+# \[MemberNotNull\]
+
+```
+public class Person
+{
+  public Person() {}
+
+  public Person(PersonDto dto)
+  {
+    InitPerson(dto);
+  }
+
+  public string? Name { get; set; }
+
+  [MemberNotNull(nameof(Name))]
+  public void InitPerson(PersonDto dto)
+  {
+    Name = dto.Name;
+  }
+}
+```
+
+---
+
+# Serialization
+
+- Needs to handle being `new`ed up in code and deserialized
+  - Code needs to enforce null rules
+  - Attributes for deserializarion
+* This means duplicated logic
+
+---
+
+# Demo Time
 
 ---
 

@@ -21,6 +21,8 @@ with AL Rodriguez
 - https://ProgrammerAL.com
 - Principal Backend Developer at Olympus
 
+![bg right 80%](presentation-images/presentation_link_qrcode.png)
+
 ---
 
 # Why are we here?
@@ -328,3 +330,5 @@ public class Person
 
 - @ProgrammerAL
 - https://ProgrammerAL.com
+
+![bg right 80%](presentation-images/presentation_link_qrcode.png)

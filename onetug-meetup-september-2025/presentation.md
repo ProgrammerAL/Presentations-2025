@@ -136,6 +136,7 @@ private void Combine(string a, string b, string c)
 
 - NO CHANGE IN FUNCTIONALITY
 - Added syntax for developers
+- More thinking ahead of time
 
 ---
 
@@ -258,16 +259,16 @@ public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
 # \[MemberNotNull\]
 
 ```
+var person = new Person();
+var personDto = LoadPersonInfo();
+person.InitPerson(myDto);
+Console.WriteLine(person.Name);
+
 public class Person
 {
   public Person() {}
 
-  public Person(PersonDto dto)
-  {
-    InitPerson(dto);
-  }
-
-  public string? Name { get; set; }
+  public string? Name { get; private set; }
 
   [MemberNotNull(nameof(Name))]
   public void InitPerson(PersonDto dto)
@@ -279,6 +280,11 @@ public class Person
 
 ---
 
+# Attributes Are Useful
+
+- Full List: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/nullable-analysis
+
+---
 # Serialization
 
 - Needs to handle being `new`ed up in code and deserialized

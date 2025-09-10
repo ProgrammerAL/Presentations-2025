@@ -292,7 +292,10 @@ public class Person
 - Needs to handle being `new`ed up in code and deserialized
   - Code needs to enforce null rules
   - Attributes for deserializarion
-* This means duplicated logic
+- `required` keyword and `[Required]` attribute are different
+  - Keyword is for compile time
+  - Attribute is for runtime deserialization
+- This means duplicated logic
 
 ---
 

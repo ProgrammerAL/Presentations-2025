@@ -40,7 +40,7 @@ with AL Rodriguez
 
 ---
 ```csharp
-private void Combine(string a, string b, string c)
+private string Combine(string a, string b, string c)
 {
   var aShort = a.Substring(0, 2);
   var bShort = b.Substring(0, 2);
@@ -51,7 +51,7 @@ private void Combine(string a, string b, string c)
 ```
 ---
 ```csharp
-private void Combine(string a, string b, string c)
+private string Combine(string a, string b, string c)
 {
   if(a != null && b != null && c != null)
   {
@@ -67,7 +67,7 @@ private void Combine(string a, string b, string c)
 ```
 ---
 ```csharp
-public void FormatStrings(string a, string b, string c)
+public string FormatStrings(string a, string b, string c)
 {
   if(a != null && b != null && c != null)
   {
@@ -77,7 +77,7 @@ public void FormatStrings(string a, string b, string c)
   return "";
 }
 
-private void Combine(string a, string b, string c)
+private string Combine(string a, string b, string c)
 {
   var aShort = a.Substring(0, 2);
   var bShort = b.Substring(0, 2);
@@ -88,7 +88,7 @@ private void Combine(string a, string b, string c)
 ```
 ---
 ```csharp
-public void FormatStrings(string a, string b, string c)
+public string FormatStrings(string a, string b, string c)
 {
   if(a != null && b != null && c != null)
   {
@@ -98,12 +98,12 @@ public void FormatStrings(string a, string b, string c)
   return "";
 }
 
-public void DefaultCombine(string a, string b)
+public string DefaultCombine(string a, string b)
 {
     return Combine(a, b, "Combined");
 }
 
-private void Combine(string a, string b, string c)
+private string Combine(string a, string b, string c)
 {
   var aShort = a.Substring(0, 2);
   var bShort = b.Substring(0, 2);
@@ -172,7 +172,7 @@ private void Combine(string a, string b, string c)
 ---
 
 ```csharp
-public void FormatStrings(string? a, string? b, string? c)
+public string FormatStrings(string? a, string? b, string? c)
 {
   if(a != null && b != null && c != null)
   {
@@ -182,19 +182,19 @@ public void FormatStrings(string? a, string? b, string? c)
   return "";
 }
 
-public void DefaultCombine(string? a, string? b)
+public string DefaultCombine(string? a, string? b)
 {
     //Compiler Warnings
     return Combine(a, b, "Combined");
 }
 
-public void LyingDefaultCombine(string? a, string? b)
+public string LyingDefaultCombine(string? a, string? b)
 {
     //No Warnings
     return Combine(a!, b!, "Combined");
 }
 
-private void Combine(string a, string b, string c)
+private string Combine(string a, string b, string c)
 {
   var aShort = a.Substring(0, 2);
   var bShort = b.Substring(0, 2);
@@ -216,7 +216,7 @@ private void Combine(string a, string b, string c)
 
 # Try Pattern
 
-```
+```csharp
 if(TryParseNumber("abc-123"), out int? myNumber)
 {
   //Compiler Warning
@@ -233,7 +233,7 @@ public bool TryParseNumber(string text, out int? number)
 
 # \[NotNullWhen\]
 
-```
+```csharp
 public bool TryParseNumber(string text, [NotNullWhen(true)] out int? number)
 {
   ...
@@ -244,7 +244,7 @@ public bool TryParseNumber(string text, [NotNullWhen(true)] out int? number)
 
 # Even more \[NotNullWhen\]
 
-```
+```csharp
 if(TryParseNumber("abc-123"), out int? myNumber)
 {
   Console.WriteLine(myNumber);
@@ -260,7 +260,7 @@ public bool TryParseNumber(string text, [NotNullWhen(true)] int? number)
 
 # \[MemberNotNull\]
 
-```
+```csharp
 var person = new Person();
 var personDto = LoadPersonInfo();
 person.InitPerson(myDto);

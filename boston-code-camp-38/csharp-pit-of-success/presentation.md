@@ -15,6 +15,10 @@ with AL Rodriguez
 
 ---
 
+![bg](presentation-images/sponsors.png)
+
+---
+
 # Why are we here?
 
 - Discuss a C# Pit of Success
@@ -389,10 +393,5 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 
 ---
 
-# Closing
-
-- @ProgrammerAL
-- https://ProgrammerAL.com
-
-![bg left 80%](presentation-images/presentation_link_qrcode.png)
-![bg right 80%](presentation-images/sessionize-feedback.png)
+![bg 70%](presentation-images/presentation_link_qrcode.png)
+![bg 70%](presentation-images/sessionize-feedback.png)

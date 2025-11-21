@@ -19,21 +19,21 @@ with AL Rodriguez
 
 ---
 
+# Me (AL)
+
+- @ProgrammerAL
+- https://ProgrammerAL.com
+
+![bg right 80%](presentation-images/presentation_link_qrcode.png)
+
+---
+
 # Why are we here?
 
 - Discuss a C# Pit of Success
   - Enforce code quality
 - Present ***Recommendations***
-  - Please limit your yelling
 - All Free*
-
----
-
-# Me (AL)
-
-- @ProgrammerAL
-- https://ProgrammerAL.com
-- Principal Backend Developer at Olympus
 
 ---
 
@@ -50,7 +50,7 @@ with AL Rodriguez
 
 - Some build on each other
 - Your call to use or not
-- Don't yell at me
+- More work, added safety
 
 ---
 
@@ -73,6 +73,18 @@ with AL Rodriguez
 <PropertyGroup>
 ```
 
+---
+
+# Side Note: Nullable Reference Types
+
+```csharp
+//This
+string? name = null;
+name += " the Awesome"; //Compiler Warning
+
+//Not This
+Nullable<int> x = null;
+```
 ---
 
 # Recommendation:
@@ -105,8 +117,8 @@ with AL Rodriguez
 ```csharp
 public void SomeMethod()
 {
-  var userId = LoadUserId(_context);
-  Console.WriteLine(userId);//Generates Compiler Warning
+  var userIdString = LoadUserId(_context);
+  var userId = int.Parse(userIdString);//Generates Compiler Warning
 }
 
 private string? LoadUserId(HttpContext? context)
@@ -379,6 +391,7 @@ builder.Services.AddScoped<IUserManager, UserManager>();
 - Warnings as Errors
 - Nullable Reference Types
 - Static Code Analysis
+- Manage all Static Rules in One Place
 - Codify Patterns
 - Secure Supply Chain
 - Continuous Testing

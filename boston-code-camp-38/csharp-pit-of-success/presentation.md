@@ -196,13 +196,15 @@ private string? LoadUserId(HttpContext? context)
 <PropertyGroup>
   <EnableNETAnalyzers>true</EnableNETAnalyzers>
   <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-  <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
   <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+
+  <!-- Deprecated in .NET 10+   -->
+  <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
 </PropertyGroup>
 ```
 
-- Note: `Microsoft.CodeAnalysis.NetAnalyzers` Package or `<EnableNETAnalyzers>` replaced FxCop
+- Note: `Microsoft.CodeAnalysis.NetAnalyzers` package and `<EnableNETAnalyzers>` replaced FxCop
 
 ---
 

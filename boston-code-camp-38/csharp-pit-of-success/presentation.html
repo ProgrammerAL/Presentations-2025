@@ -225,13 +225,15 @@ Nullable&lt;<span class="hljs-built_in">int</span>&gt; x = <span class="hljs-lit
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">PropertyGroup</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">EnableNETAnalyzers</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">EnableNETAnalyzers</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">EnforceCodeStyleInBuild</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">EnforceCodeStyleInBuild</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-name">IncludeOpenAPIAnalyzers</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">IncludeOpenAPIAnalyzers</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">EnableRequestDelegateGenerator</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">EnableRequestDelegateGenerator</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">EnableConfigurationBindingGenerator</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">EnableConfigurationBindingGenerator</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Deprecated in .NET 10+   --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">IncludeOpenAPIAnalyzers</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">IncludeOpenAPIAnalyzers</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">PropertyGroup</span>&gt;</span>
 </code></pre>
 <ul>
-<li>Note: <code>Microsoft.CodeAnalysis.NetAnalyzers</code> Package or <code>&lt;EnableNETAnalyzers&gt;</code> replaced FxCop</li>
+<li>Note: <code>Microsoft.CodeAnalysis.NetAnalyzers</code> package and <code>&lt;EnableNETAnalyzers&gt;</code> replaced FxCop</li>
 </ul>
 <footer>@ProgrammerAL and programmerAL.com</footer>
 </section>

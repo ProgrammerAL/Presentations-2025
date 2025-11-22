@@ -75,18 +75,6 @@ with AL Rodriguez
 
 ---
 
-# Side Note: Nullable Reference Types
-
-```csharp
-//This
-string? name = null;
-name += " the Awesome"; //Compiler Warning
-
-//Not This
-Nullable<int> x = null;
-```
----
-
 # Recommendation:
 ## Embrace Nullable References Types (NRTs)
 
@@ -95,6 +83,19 @@ Nullable<int> x = null;
 - Not as hard as Rust!
 - A lot of code hassle can be mitigated
 
+---
+
+# Side Note: Nullable Reference Types
+
+```csharp
+
+//Nullable Reference Types
+string? name = null;
+name += " the Awesome"; //Compiler Warning
+
+//Nullable Types
+Nullable<int> x = null;
+```
 ---
 
 # What are NRTs?

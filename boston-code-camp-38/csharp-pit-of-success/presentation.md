@@ -199,7 +199,7 @@ private string? LoadUserId(HttpContext? context)
   <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
   <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
 
-  <!-- Deprecated in .NET 10+   -->
+  <!-- Deprecated in .NET 10+ -->
   <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
 </PropertyGroup>
 ```

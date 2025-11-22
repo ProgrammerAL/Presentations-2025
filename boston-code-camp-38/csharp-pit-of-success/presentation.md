@@ -289,8 +289,8 @@ dotnet_diagnostic.SA1403.severity=error
 
 # Source Generators
 
-- Add new code at compile time
-- Already used by the .NET Team heavily for AoT stuff
+- Scans your code to add new code at compile time
+- Used heavily within .NET to replace some things using reflection
 
 ---
 
